@@ -14,7 +14,7 @@ interface QueryOptions {
 export const fetchQuestions = async (options?: QueryOptions): Promise<Question[]> => {
   try {
     // In a real app, this would be an API endpoint like /api/questions
-    const response = await fetch('/questions.json');
+    const response = await fetch(`${import.meta.env.BASE_URL}questions.json`);
     
     if (!response.ok) {
       throw new Error(`Failed to fetch questions: ${response.statusText}`);
